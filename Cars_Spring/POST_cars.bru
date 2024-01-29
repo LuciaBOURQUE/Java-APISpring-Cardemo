@@ -1,18 +1,22 @@
 meta {
   name: POST_cars
   type: http
-  seq: 2
+  seq: 5
 }
 
-get {
-  url: {
-        "id": 1,
-        "label": "Toyota",
-        "model": "Camry",
-        "color": "Blue",
-        "dateRegistration": "2022-01-15",
-        "registration": "ABC123"
-    },{{baseURL}}/api/cars
-  body: none
+post {
+  url: {{baseURL}}/api/cars
+  body: json
   auth: none
+}
+
+body:json {
+    {
+      "label": "Ford",
+      "model": "Focus",
+      "year": 2012,
+      "color": "Blue",
+      "dateRegistration": "2022-01-15",
+      "registration": "ABC123"
+    }
 }
