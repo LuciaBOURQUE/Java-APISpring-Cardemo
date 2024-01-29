@@ -1,0 +1,23 @@
+meta {
+  name: PUT_cars_id
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{baseURL}}/api/cars/5
+  body: json
+  auth: none
+}
+
+body:json {
+    {
+      "id": 5,
+      "label": "Tuture Lucia",
+      "model": "Golf",
+      "year": 2050,
+      "color": "Rainbow",
+      "dateRegistration": "2023-06-30",
+      "registration": "JKL012"
+    }
+}

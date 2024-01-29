@@ -1,0 +1,18 @@
+meta {
+  name: POST_cars
+  type: http
+  seq: 2
+}
+
+get {
+  url: {
+        "id": 1,
+        "label": "Toyota",
+        "model": "Camry",
+        "color": "Blue",
+        "dateRegistration": "2022-01-15",
+        "registration": "ABC123"
+    },{{baseURL}}/api/cars
+  body: none
+  auth: none
+}

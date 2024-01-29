@@ -1,0 +1,22 @@
+meta {
+  name: DELETE_cars_id
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{baseURL}}/api/cars/1
+  body: json
+  auth: none
+}
+
+body:json {
+    {
+      "label": "Ford",
+      "model": "Focus",
+      "year": 2012,
+      "color": "Blue",
+      "dateRegistration": "2022-01-15",
+      "registration": "ABC123"
+    }
+}
