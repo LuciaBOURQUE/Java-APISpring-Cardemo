@@ -38,6 +38,7 @@ public class Admin {
     }
 
     // GET (Read - n2)
+    /*
     @GetMapping("cars/{id}")
     public ResponseEntity<Car> getCarById(@PathVariable("id") Integer id){
         Optional<Car> opt = garage.findById(id);
@@ -46,7 +47,19 @@ public class Admin {
         else {
             return ResponseEntity.ok(opt.get());
         }
+    }*/
+
+    @GetMapping("cars/{id}")
+    public ResponseEntity<CarDTO> getCarById(@PathVariable("id") Integer id){
+        Optional<Car> opt = garage.findById(id);
+        if(opt.isEmpty())
+            return ResponseEntity.notFound().build();
+        else {
+            CarDTO dto = CarMapper.convertEntityToDto(opt.get());
+            return ResponseEntity.ok(dto);
+        }
     }
+
 
     // PUT (Update)
     @PutMapping("cars/{id}")
